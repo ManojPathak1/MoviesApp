@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="loginContainer">
+        <div class="innerLoginContainer">
+            <h1 class="heading">Sign In</h1>
+            <input [(ngModel)]="login.emailId" type="text" class="signInInputField loginCredentialsFont" placeholder="Email" />
+            <input [(ngModel)]="login.password" type="password" class="signInInputField loginCredentialsFont" placeholder="Password" />
+            <button class="loginBtn" (click)="onClickLogin()">
+                <span class="loginText">Sign In</span>
+                <!-- <mat-spinner [diameter]="30" [color]="warn"></mat-spinner> -->
+            </button>
+            <!-- <div>
+                <button mat-raised-button color="primary">Primary</button>
+            </div> -->
+        </div>
+    </div>
+</div>

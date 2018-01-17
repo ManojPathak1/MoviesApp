@@ -1,0 +1,48 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    overflow-y: auto;
+}
+.movieList {
+    display: flex;
+    width: 90%;
+    margin-top: 10px;
+    min-height: 150px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    border-radius: 5px;
+}
+.movieList:hover {
+    background-color: #eee !important;
+}
+.imageContainer {
+    width: 90px;
+}
+.infoContainer {
+    flex: 4;
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+}
+.movieName {
+    font-family: GreatVibes;
+    font-weight: bold;
+    font-size: 16px;
+}
+.movieSubtitle {
+    font-family: GreatVibes;
+    font-weight: bold;
+    color: #777;
+    font-size: 14px;
+}
+.ratingContainer {
+    display: flex;
+    align-items: center;
+}
+.movieSummary {
+    font-family: MuliRegular;
+    font-weight: bold;
+    color: #777;
+    font-size: 10px;
+}

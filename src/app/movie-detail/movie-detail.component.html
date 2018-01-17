@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="imageContainer">
+        <img src={{selectedMovie.widePosterUrl}} height="100%" width="100%" />
+    </div>
+    <div class="movieDetailContainer">
+        <span class="movieName" style="padding: 10px;">{{selectedMovie.name}}</span>
+        <span class="movieName" style="color: gray; font-size: 20px; color: gray; padding-bottom: 5px;">{{selectedMovie.subtitle}}</span>
+        <div class="descriptionContainer">
+            <span class="descriptionText" style="margin: 10px;">
+                {{selectedMovie.summary}}
+            </span>
+        </div>
+        <div class="trailerBtn" (click)="onClickTrailer();">
+            <span class="btnText">Watch Trailer</span>
+        </div>
+        <div class="videoContainer">
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/ZSzeFFsKEt4?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+    </div>
+</div>

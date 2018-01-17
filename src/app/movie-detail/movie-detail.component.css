@@ -1,0 +1,54 @@
+.container {
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+}
+.imageContainer {
+    display: flex;
+    height: 200px;
+}
+.movieDetailContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fafafa;
+}
+.movieName {
+    font-family: GreatVibes;
+    font-size: 24px;
+    color: #000;
+    font-weight: bold;
+}
+.descriptionContainer {
+    display: flex;
+    background-color: #eee;
+    border: 1px #ccc solid;
+    align-items: center;
+}
+.descriptionText {
+    font-family: MuliRegular;
+    font-size: 14px;
+    color: gray;
+    text-align: center;
+    font-weight: bold;
+}
+.trailerBtn {
+    display: flex;
+    width: 100%;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    background-color: #d11010;
+}
+.btnText {
+    font-family: MuliRegular;
+    font-size: 18px;
+    color: #fff;
+    font-weight: bold;
+}
+.videoContainer {
+    width: 100%;
+    height: 200px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
