@@ -17,10 +17,12 @@ import { TrendsComponent } from './trends/trends.component';
 import { ApiService } from './api.service';
 import { AuthInterceptor } from './AuthInterceptor';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { TrendsService } from './trends/trends.service';
 
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { TemplatesComponent } from './templates/templates.component';
 
 
 @NgModule({
@@ -30,7 +32,8 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     NavbarComponent,
     HomeComponent,
     MovieDetailComponent,
-    TrendsComponent
+    TrendsComponent,
+    TemplatesComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +51,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     StoreDevtoolsModule.instrumentOnlyWithExtension() */
   ],
   exports: [MatButtonModule, MatCheckboxModule, MatProgressSpinnerModule],
-  providers: [ApiService, {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}],
+  providers: [ApiService, TrendsService, {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule {

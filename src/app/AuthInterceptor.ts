@@ -11,8 +11,11 @@ export class AuthInterceptor implements HttpInterceptor {
     // const authHeader = this.auth.getAuthorizationHeader();
     let header = null;
     header = req.headers.append('Cache-Control', 'no-cache');
-    let token = localStorage.getItem('ApiToken');
-    header = header.set('Token', token);
+    let authResponse = localStorage.getItem('AuthResponse');
+    if(authResponse) {
+        let token = JSON.parse(authResponse).Token;
+        header = header.set('Token', token);
+    }
     // Clone the request to add the new header.
     console.log(req.headers);
     const authReq = req.clone({headers: header});

@@ -1,5 +1,14 @@
 <div class="container">
-    <div class="loginContainer">
+    <div id="overlay" *ngIf="isLoading" style="display: flex; align-items: center; justify-content: center;">
+        <div style="border-radius: 5px; background: #fff; display: flex; flex-direction: row; align-items: center; box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);">
+            <div layout="row" layout-sm="column" layout-align="space-around" style="padding: 15px;">
+                <mat-spinner style="stroke: #fff;" [diameter]="30" [color]="warn"></mat-spinner>
+            </div>
+            <span style="font-family: MuliRegular; font-weight: bold; font-size: 14px; padding: 10px; margin-left: -10px;">Loading...</span>
+        </div>
+    </div>
+    <!-- Login View -->
+    <div class="loginContainer" *ngIf="viewIndex===0">
         <div class="innerLoginContainer">
             <h1 class="heading">Sign In</h1>
             <input [(ngModel)]="login.emailId" type="text" class="signInInputField loginCredentialsFont" placeholder="Email" />
@@ -12,5 +21,9 @@
                 <button mat-raised-button color="primary">Primary</button>
             </div> -->
         </div>
+    </div>
+    <!-- Login View End -->
+    <div style="flex: 1;" *ngIf="viewIndex===1">
+        <app-templates></app-templates>
     </div>
 </div>

@@ -8,6 +8,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
 import 'rxjs/add/observable/of';
+import { HttpParams } from '@angular/common/http';
 
 @Injectable()
 export class ApiService {
@@ -61,13 +62,30 @@ export class ApiService {
   };
 } */
 
-    auth(): any {
-        let url = "";
+    auth(emailId, password): any {
+        // let base64 = Base64();
+        let authToken = "Basic "+btoa(emailId+':'+password);
+        let url = "http://test.qorql.com/firebase/auth";
         let headersObj = {
-            headers: new HttpHeaders().set('Authorization', 'auth-token')
+            headers: new HttpHeaders().set('Authorization', authToken)
         }
         return this.http.get(url, headersObj)
             .map(res => {
+                return res;
+            })
+            .catch(error => {
+                return Observable.of(error);
+            });
+    }
+
+    fetchTemplateNames(doctorId): any {
+        // let base64 = Base64();
+        let url = 'http://test.qorql.com/firebase/v2/eprescription/templates/names';
+        return this.http.post(url, null, {
+            params: new HttpParams().set('doctor', doctorId),
+        })
+            .map(res => {
+                console.log(res);
                 return res;
             })
             .catch(error => {

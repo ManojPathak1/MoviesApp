@@ -5,10 +5,10 @@
     overflow-y: hidden;
 }
 .view {
-    height: 91%;
+    flex: 1;
     overflow-y: auto;
 }
 .navBar {
-    height: 9%;
+    height: 60px;
     border-top: 1px #ccc solid;
 }

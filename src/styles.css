@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~@angular/material/prebuilt-themes/pink-bluegrey.css";
 @font-face {
   font-family: "MuliRegular";
   src: url(./assets/fonts/Muli/Muli-Regular.ttf) format("truetype");
@@ -16,4 +16,22 @@ body {
 .disableElement {
     pointer-events: none;
     opacity: 0.5;
+}
+
+#overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.1);
+    /* background-color: #fff; */
+    z-index: 1000;
+    cursor: cursor;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

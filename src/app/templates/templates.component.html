@@ -1,0 +1,5 @@
+<div class="container">
+    <div style="display: flex; flex-wrap: wrap; justify-content: center;">
+        <span (click)="onClickTemplate(template);" *ngFor="let template of templates; let i = index;"  [attr.data-index]="i"  [ngClass]="(contains(template))?'chip chipSelected': 'chip chipUnselected'">Painkillers</span>
+    </div>
+</div>

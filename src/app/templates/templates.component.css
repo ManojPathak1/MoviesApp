@@ -1,0 +1,19 @@
+.container {
+    height: 100%;
+}
+.chip {
+    padding: 8px 15px;
+    margin: 5px;
+    border-radius: 50px;
+    font-family: MuliRegular;
+    font-weight: bold;
+    font-size: 13px;
+    color: #fff;
+}
+.chipSelected {
+    background-color: #d80d17;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+.chipUnselected {
+    background-color: #ff545c;
+}

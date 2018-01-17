@@ -9,6 +9,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    outline: none;
 }
 .selected {
     font-family: MuliRegular;
