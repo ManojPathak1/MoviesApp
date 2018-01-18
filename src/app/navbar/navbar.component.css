@@ -13,14 +13,14 @@
 }
 .selected {
     font-family: MuliRegular;
-    color: #00cccc;
+    color: #e01631;
     font-size: 13px;
     font-weight: bold;
     transition: font-size .05s ease;
 }
 .unselected {
     font-family: MuliRegular;
-    color: gray;
+    color: #ccc;
     font-size: 11px;
     transition: font-size .05s ease;
 }

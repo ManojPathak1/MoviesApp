@@ -23,6 +23,9 @@ import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { TemplatesComponent } from './templates/templates.component';
+import { ProfileComponent } from './profile/profile.component';
+import { ProfileService } from './profile/profile.service';
+import { NewsComponent } from './news/news.component';
 
 
 @NgModule({
@@ -33,7 +36,9 @@ import { TemplatesComponent } from './templates/templates.component';
     HomeComponent,
     MovieDetailComponent,
     TrendsComponent,
-    TemplatesComponent
+    TemplatesComponent,
+    ProfileComponent,
+    NewsComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +56,7 @@ import { TemplatesComponent } from './templates/templates.component';
     StoreDevtoolsModule.instrumentOnlyWithExtension() */
   ],
   exports: [MatButtonModule, MatCheckboxModule, MatProgressSpinnerModule],
-  providers: [ApiService, TrendsService, {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}],
+  providers: [ApiService, TrendsService, ProfileService, {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule {

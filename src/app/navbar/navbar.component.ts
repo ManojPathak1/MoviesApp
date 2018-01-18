@@ -8,7 +8,7 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
 
-    selectedTabIndex = 0;
+    selectedTabIndex = 2;
 
     onClickTab(index): void {
         console.log("On click tab"+index);
@@ -18,7 +18,7 @@ export class NavbarComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit() {
-      this.router.navigate(['/home']);
+      this.router.navigate(['/profile']);
   }
 
 }

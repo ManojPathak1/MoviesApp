@@ -92,4 +92,17 @@ export class ApiService {
                 return Observable.of(error);
             });
     }
+
+    fetchNews(): any {
+        // let base64 = Base64();
+        let url = 'http://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=1272e100399c44bfbe91b64998809de0';
+        return this.http.get(url)
+            .map(res => {
+                console.log(res);
+                return res;
+            })
+            .catch(error => {
+                return Observable.of(error);
+            });
+    }
 }
