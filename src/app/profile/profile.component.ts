@@ -11,7 +11,8 @@ export class ProfileComponent implements OnInit {
     constructor(private profileService: ProfileService) { }
 
     ngOnInit() {
-
+        var myElement = document.getElementById('newsElement');
+        console.log(myElement);
     }
 
     SWIPE_ACTION = { LEFT: 'swipeleft', RIGHT: 'swiperight'};

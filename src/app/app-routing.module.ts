@@ -5,13 +5,15 @@ import { HomeComponent } from './home/home.component';
 import { TrendsComponent } from './trends/trends.component';
 import { MovieDetailComponent } from './movie-detail/movie-detail.component';
 import { ProfileComponent } from './profile/profile.component';
+import { NewsviewComponent } from './newsview/newsview.component';
 
 const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full'},
     { path: 'home', component: HomeComponent },
     { path: 'moviedetail', component: MovieDetailComponent },
     { path: 'trends', component: TrendsComponent },
-    { path: 'profile', component: ProfileComponent }
+    { path: 'profile', component: ProfileComponent },
+    { path: 'newsview/:id', component: NewsviewComponent}
 ];
 @NgModule({
     imports: [ RouterModule.forRoot(routes) ],

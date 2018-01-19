@@ -1,5 +1,5 @@
-<div class="container">
-    <div class="newsContainer" *ngFor="let n of news; let i = index;" (swipeup)="swipe(i, $event.type)" (swiperight)="swipe(i, $event.type)" [attr.data-index]="i" [ngClass]="(selectedIndex===i)?'block': 'hidden'">
+<div class="container" id="newsElement">
+    <div class="newsContainer" *ngFor="let n of news; let i = index;" (swipeup)="swipe($event.type)" (swipedown)="swipe($event.type)" (swipeleft)="swipe($event.type)" (swiperight)="swipe($event.type)" [attr.data-index]="i" [ngClass]="(selectedIndex===i)?'block': 'hidden'">
         <div class="imageContainer">
             <img src={{n.urlToImage}} width="100%" height="100%" style="border-radius: 10px 10px 0px 0px;" />
         </div>
@@ -8,7 +8,7 @@
                 <span style="font-family: MuliRegular; font-weight: bold; font-size: 20px;">{{n.title}}</span>
             </div>
             <div class="titleContainer">
-                <span style="font-family: MuliRegular; font-weight: bold; font-size: 16px; color: #4c4c4c;">{{n.title}}</span>
+                <span style="font-family: MuliRegular; font-weight: bold; font-size: 16px; color: #4c4c4c;">{{n.description}}</span>
             </div>
             <div class="titleContainer">
                 <span style="font-family: MuliRegular; font-weight: bold; font-size: 14px; color: #aaa;">{{n.source.name+" "+n.author}}</span>

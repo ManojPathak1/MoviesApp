@@ -11,7 +11,7 @@ export class AuthInterceptor implements HttpInterceptor {
     // const authHeader = this.auth.getAuthorizationHeader();
     console.log(req.url);
     let header = null;
-    if(req.url!=="http://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=1272e100399c44bfbe91b64998809de0") {
+    if(req.url!=="https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=1272e100399c44bfbe91b64998809de0") {
         header = req.headers.append('Cache-Control', 'no-cache');
         let authResponse = localStorage.getItem('AuthResponse');
         if(authResponse) {

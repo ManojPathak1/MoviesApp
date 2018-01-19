@@ -95,7 +95,19 @@ export class ApiService {
 
     fetchNews(): any {
         // let base64 = Base64();
-        let url = 'http://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=1272e100399c44bfbe91b64998809de0';
+        let url = 'https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=1272e100399c44bfbe91b64998809de0';
+        return this.http.get(url)
+            .map(res => {
+                console.log(res);
+                return res;
+            })
+            .catch(error => {
+                return Observable.of(error);
+            });
+    }
+
+    getWeather(lat, lon): any {
+        let url = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=bbe7327d5a45716dc5fbab635e6d1f06`;
         return this.http.get(url)
             .map(res => {
                 console.log(res);
