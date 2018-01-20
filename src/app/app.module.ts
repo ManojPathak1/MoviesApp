@@ -27,6 +27,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { ProfileService } from './profile/profile.service';
 import { NewsComponent } from './news/news.component';
 import { NewsviewComponent } from './newsview/newsview.component';
+import { WeatherComponent } from './weather/weather.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { NewsviewComponent } from './newsview/newsview.component';
     TemplatesComponent,
     ProfileComponent,
     NewsComponent,
-    NewsviewComponent
+    NewsviewComponent,
+    WeatherComponent
   ],
   imports: [
     BrowserModule,

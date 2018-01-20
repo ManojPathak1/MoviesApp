@@ -7,6 +7,10 @@
             <span class="loginText">Read News</span>
             <!-- <mat-spinner [diameter]="30" [color]="warn"></mat-spinner> -->
         </button>
+        <button class="loginBtn" (click)="onClickWeather()">
+            <span class="loginText">Weather</span>
+            <!-- <mat-spinner [diameter]="30" [color]="warn"></mat-spinner> -->
+        </button>
     </div>
     <div *ngIf="viewIndex===1" style="height: 100%; width: 100%;">
         <app-news></app-news>

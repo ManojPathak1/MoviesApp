@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProfileService } from './profile.service';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -8,7 +9,7 @@ import { ProfileService } from './profile.service';
 })
 export class ProfileComponent implements OnInit {
 
-    constructor(private profileService: ProfileService) { }
+    constructor(private profileService: ProfileService, private router: Router) { }
 
     ngOnInit() {
         var myElement = document.getElementById('newsElement');
@@ -68,6 +69,11 @@ export class ProfileComponent implements OnInit {
     onClickReadNews(): void {
         console.log("On Click Read News");
         this.profileService.onClickReadNews(this);
+    }
+
+    onClickWeather(): void {
+        console.log("on click weather");
+        this.router.navigate(['/weather']);
     }
 
 }

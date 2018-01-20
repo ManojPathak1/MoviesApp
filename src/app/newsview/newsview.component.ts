@@ -9,7 +9,7 @@ import { DomSanitizer, SafeResourceUrl, SafeUrl} from '@angular/platform-browser
 })
 export class NewsviewComponent implements OnInit {
 
-    url: string;
+    url: any;
 
   constructor(private route: ActivatedRoute, private domSanitizer : DomSanitizer) {
       console.log(this.route.snapshot.paramMap.get('id'));
