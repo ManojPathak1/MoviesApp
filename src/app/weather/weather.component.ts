@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-weather',
@@ -7,9 +8,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WeatherComponent implements OnInit {
 
-  constructor() { }
+    constructor(private ApiService: ApiService) { }
 
-  ngOnInit() {
-  }
+    ngOnInit() {
+        this.getLocation();
+    }
 
+    getLocation(): void {
+        let vm = this;
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                vm.getWeather(position.coords.latitude, position.coords.longitude);
+            });
+        }
+        else {
+            console.log("Failure");
+        }
+    }
+
+    getWeather(lat, lon): void {
+        this.ApiService.getWeather(lat, lon)
+            .subscribe((res)=> {
+                console.log(res);
+            });
+    }
 }

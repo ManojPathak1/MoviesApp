@@ -1,0 +1,17 @@
+.container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.imageContainer {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.temperatureText {
+    font-family: MuliRegular;
+    font-weight: bold;
+    color: #fff;
+    font-size: 50px;
+}

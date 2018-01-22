@@ -107,7 +107,7 @@ export class ApiService {
     }
 
     getWeather(lat, lon): any {
-        let url = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=bbe7327d5a45716dc5fbab635e6d1f06`;
+        let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=bbe7327d5a45716dc5fbab635e6d1f06`;
         return this.http.get(url)
             .map(res => {
                 console.log(res);
