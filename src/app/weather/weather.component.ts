@@ -11,8 +11,12 @@ export class WeatherComponent implements OnInit {
     constructor(private ApiService: ApiService) { }
 
     ngOnInit() {
-        this.getLocation();
+
     }
+
+    weather: any;
+    temp: number;
+    name: string;
 
     getLocation(): void {
         let vm = this;
@@ -30,6 +34,27 @@ export class WeatherComponent implements OnInit {
         this.ApiService.getWeather(lat, lon)
             .subscribe((res)=> {
                 console.log(res);
+                this.weather = res;
+                this.temp = (this.weather.main.temp-273).toFixed(2);
+                this.name = this.weather.name;
+                this.implementMap(lat, lon);
             });
+    }
+
+    implementMap(lat, lon): void {
+        var mapOptions = {
+            center: new google.maps.LatLng(lat, lon),
+            zoom: 15
+        }
+        var map = new google.maps.Map(document.getElementById("mapContainer"), mapOptions);
+        var marker = new google.maps.Marker({
+          position: {lat: lat, lng: lon},
+          map: map
+        });
+    }
+
+    ngAfterViewInit() {
+        this.getLocation();
+        // this.getWeather(28.63, 77.37);
     }
 }

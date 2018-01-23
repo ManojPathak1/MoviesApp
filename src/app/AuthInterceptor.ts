@@ -9,10 +9,18 @@ export class AuthInterceptor implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     // Get the auth header from the service.
     // const authHeader = this.auth.getAuthorizationHeader();
-    console.log(req.url);
+    console.log(req);
     let header = null;
-    if(req.url!=="https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=1272e100399c44bfbe91b64998809de0") {
+    let weatherApiKey = "f89a50b055bb3e5a42333e331e717094";
+    let newsApiKey = "1272e100399c44bfbe91b64998809de0";
+    let len = req.url.length;
+    let isExternalApi = len>32?(req.url.substr(len-32)===weatherApiKey || req.url.substr(len-32)===newsApiKey): false;
+    if(!isExternalApi) {
         header = req.headers.append('Cache-Control', 'no-cache');
+        // header.append('Access-Control-Allow-Origin', '*');
+        // header = header.append('Access-Control-Allow-Headers', 'Content-Type, Accept');
+        // header = header.append('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+        // header = header.append('Content-Type', 'application/x-www-form-urlencoded;charset=UTF-8');
         let authResponse = localStorage.getItem('AuthResponse');
         if(authResponse) {
             let token = JSON.parse(authResponse).Token;
