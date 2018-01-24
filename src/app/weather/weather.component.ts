@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
+import {} from '@types/googlemaps'; 
 
 @Component({
   selector: 'app-weather',
@@ -15,9 +16,8 @@ export class WeatherComponent implements OnInit {
     }
 
     weather: any;
-    temp: number;
+    temp: string;
     name: string;
-
     getLocation(): void {
         let vm = this;
         if (navigator.geolocation) {
